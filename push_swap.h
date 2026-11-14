@@ -6,11 +6,13 @@
 # include "libft/libft.h"
 //# include "ft_printf.h"
 
+/*
 typedef struct s_stack
 {
 	int	num;
 	struct	s_a *next;
 }	t_stack;
+*/
 
 typedef enum e_stratsel
 {
@@ -23,10 +25,11 @@ typedef enum e_stratsel
 
 // Utilities
 void	error(void);
-size_t	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
+int	check_num(const char *s);
 
 // Utilities from ss
-void	stratsel(const char *s, t_stack stack_a, t_stack stack_b);
-size_t	stratsel_verif(const char *s);
+void	call_algo(const char *s, t_list stack_a, t_list stack_b);
+size_t	strategy_selector(const char *s);
 
 #endif

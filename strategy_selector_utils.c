@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-size_t	stratsel_verif(const char *s)
+size_t	strategy_selector(const char *s)
 {
 	if (!ft_strcmp(s, "--simple"))
 		return (SIMPLE);
@@ -14,10 +14,12 @@ size_t	stratsel_verif(const char *s)
 		return (DEFAULT);
 }
 
-void	stratsel(const char *s, t_stack stack_a, t_stack stack_b)
+/*
+void	call_algo(const char *s, t_list stack_a, t_list stack_b)
 {
-	/*if (!ft_strcmp(s, "--simple"))
+	if (!ft_strcmp(s, "--simple"))
 	else if (!ft_strcmp(s, "--medium"))
 	else if (!ft_strcmp(s, "--complex"))
-	else if (!ft_strcmp(s, "--adaptive"))*/
+	else if (!ft_strcmp(s, "--adaptive"))
 }
+*/
