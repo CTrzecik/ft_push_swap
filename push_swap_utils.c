@@ -8,6 +8,8 @@ void	error(void)
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
+	if (!s1 || !s2)
+		return (0);
 	while (*s1)
 	{
 		if (*(s1++) != *(s2++))
@@ -18,6 +20,8 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 int	check_num(const char *s)
 {
+	if (!s)
+		return (1);
 	while (*s)
 	{
 		if (!ft_isdigit(*(s++)))

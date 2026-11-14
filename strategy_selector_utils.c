@@ -2,6 +2,8 @@
 
 size_t	strategy_selector(const char *s)
 {
+	if (!s)
+		error();
 	if (!ft_strcmp(s, "--simple"))
 		return (SIMPLE);
 	else if (!ft_strcmp(s, "--medium"))
