@@ -1,18 +1,12 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
 # include <stdlib.h> 
 # include <unistd.h>
 # include "libft/libft.h"
-//# include "ft_printf.h"
-
-/*
-typedef struct s_stack
-{
-	int	num;
-	struct	s_a *next;
-}	t_stack;
-*/
 
 typedef enum e_stratsel
 {
@@ -26,7 +20,10 @@ typedef enum e_stratsel
 // Utilities
 void	error(void);
 int		ft_strcmp(const char *s1, const char *s2);
-int	check_num(const char *s);
+int		isdigit_str(const char *s);
+int		is_within_int_limit(long nbr);
+long	ft_atol(const char *nptr);
+int		isrepeat(const int nbr, const t_list *stack_a);
 
 // Utilities from ss
 void	call_algo(const char *s, t_list stack_a, t_list stack_b);

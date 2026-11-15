@@ -4,24 +4,21 @@
 void	fill_stack_a(int argc, char **argv, t_list **stack_a, int idx)
 {
 	int		*num;
-	t_list	*nw;
 
 	while (idx < argc)
 	{
-		if (check_num(argv[idx]))
+		if (!isdigit_str(argv[idx])
+			|| !is_within_int_limit(ft_atol(argv[idx]))
+			|| isrepeat(ft_atol(argv[idx]), *stack_a))
 		{
 			ft_lstclear(stack_a, &free);
 			error();
 		}
-		else
-		{
-			num = (int *)malloc(sizeof(int));
-			if (!num)
-				error();
-			*num = ft_atoi(argv[idx]);
-			nw = ft_lstnew(num);
-			ft_lstadd_back(stack_a, nw);
-		}
+		num = (int *)malloc(sizeof(int));
+		if (!num)
+			error();
+		*num = ft_atol(argv[idx]);
+		ft_lstadd_back(stack_a, ft_lstnew(num));
 		idx++;
 	}
 	ft_lstadd_back(stack_a, NULL);
@@ -32,17 +29,19 @@ int	main(int argc, char **argv)
 	size_t		selector;
 	int			idx;
 	t_list		*stack_a;
-	//t_list		*stack_b;
+	t_list		*stack_b;
 	t_list		*temp;
 
 	stack_a = NULL;
+	(void)stack_b;
 	idx = 1;
 	if (argc == 1)
-		error();
+		exit(1);
 	selector = strategy_selector(argv[1]);
 	if (selector != DEFAULT)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
+	printf("sel: %lu\n", selector);
 	while (stack_a)
 	{
 		temp = stack_a->next;
