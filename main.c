@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
 	printf("sel: %lu\n", selector);
+    //printf("\nstack_a\n\n");
 	// while (stack_a)
 	// {
 	// 	temp = stack_a->next;
@@ -49,7 +50,8 @@ int	main(int argc, char **argv)
 	// 	ft_lstdelone(stack_a, &free);
 	// 	stack_a = temp;
 	// }
-    pb(&stack_a, &stack_b);
+    simple_algorithm(&stack_a, &stack_b);
+    printf("\nstack_b\n\n");
     while (stack_b)
 	{
 		temp = stack_b->next;

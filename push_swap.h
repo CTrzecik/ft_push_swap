@@ -28,6 +28,7 @@ int		isrepeat(const int nbr, const t_list *stack_a);
 void	call_algo(const char *s, t_list stack_a, t_list stack_b);
 size_t	strategy_selector(const char *s);
 double	disorder(const int *a, int size);
+void    simple_algorithm(t_list **a, t_list **b);
 
 void	sa(t_list **a);
 void	sb(t_list **b);

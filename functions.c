@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:40:16 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/16 13:47:09 by ctrzecik         ###   ########.fr       */
+/*   Updated: 2026/11/16 13:57:50 by ctrzecik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,24 @@ void	ss(t_list **a, t_list **b)
 
 void	pa(t_list **a, t_list **b)
 {
-	if(!b)
+	t_list	*top;
+
+	if (!b || !*b || !a)
 		return ;
-	ft_lstadd_front(a, *b);
+	top = *b;
+	*b = top->next;
+	ft_lstadd_front(a, top);
 }
 
 void	pb(t_list **a, t_list **b)
 {
-	t_list *new;
-	if(!a)
+	t_list	*top;
+
+	if (!a || !*a || !b)
 		return ;
-	new = ft_lstnew((*a)->content);
-	ft_lstadd_front(b, new);
+	top = *a;
+	*a = top->next;
+	ft_lstadd_front(b, top);
 }
 
 void	ra(t_list **a)
