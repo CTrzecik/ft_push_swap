@@ -26,5 +26,6 @@ int		isrepeat(const int nbr, const t_list *stack_a);
 
 void	call_algo(const char *s, t_list stack_a, t_list stack_b);
 size_t	strategy_selector(const char *s);
+double	disorder(const int *a, int size);
 
 #endif

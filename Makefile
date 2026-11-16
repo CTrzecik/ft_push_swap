@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = $(PARENT_DIR)libft/
 LIBFT = $(LIBFT_DIR)libft.a
-SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c
+SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
