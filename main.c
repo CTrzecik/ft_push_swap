@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	t_list		*temp;
 
 	stack_a = NULL;
-	(void)stack_b;
+	stack_b = NULL;
 	idx = 1;
 	if (argc == 1)
 		exit(1);
@@ -42,12 +42,20 @@ int	main(int argc, char **argv)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
 	printf("sel: %lu\n", selector);
-	while (stack_a)
+	// while (stack_a)
+	// {
+	// 	temp = stack_a->next;
+	// 	printf("%d\n", *((int *)stack_a->content));
+	// 	ft_lstdelone(stack_a, &free);
+	// 	stack_a = temp;
+	// }
+    pb(&stack_a, &stack_b);
+    while (stack_b)
 	{
-		temp = stack_a->next;
-		printf("%d\n", *((int *)stack_a->content));
-		ft_lstdelone(stack_a, &free);
-		stack_a = temp;
+		temp = stack_b->next;
+		printf("%d\n", *((int *)stack_b->content));
+		ft_lstdelone(stack_b, &free);
+		stack_b = temp;
 	}
 	return (0);
 }

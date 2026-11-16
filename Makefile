@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/24 16:56:54 by dibranco          #+#    #+#              #
-#    Updated: 2026/11/15 21:09:21 by dibranco         ###   ########.fr        #
+#    Updated: 2026/11/16 11:53:22 by ctrzecik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,21 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = $(PARENT_DIR)libft/
 LIBFT = $(LIBFT_DIR)libft.a
-SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c
+LIBFTPRINTF_DIR = $(PARENT_DIR)ft_printf/
+LIBFTPRINTF = $(LIBFTPRINTF_DIR)libftprintf.a
+SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c functions.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(LIBFTPRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(LIBFTPRINTF) -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
+
+$(LIBFTPRINTF):
+	$(MAKE) -C $(LIBFTPRINTF_DIR)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
