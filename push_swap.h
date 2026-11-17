@@ -6,6 +6,7 @@
 
 # include <stdlib.h> 
 # include <unistd.h>
+#include <stdio.h>
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
@@ -26,8 +27,8 @@ long	ft_atol(const char *nptr);
 void	error(void);
 
 size_t	strategy_selector(const char *s);
-double	disorder(const int *a, int size);
 void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
+double	disorder(t_list **a, int size);
 void    simple_algorithm(t_list **a, t_list **b);
 void	medium_algorithm(t_list **a, t_list **b);
 void	complex_algorithm(t_list **a, t_list **b);

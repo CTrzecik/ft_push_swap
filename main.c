@@ -57,5 +57,13 @@ int	main(int argc, char **argv)
 		ft_lstdelone(stack_b, &free);
 		stack_b = temp;
 	}
+    // printf("\nstack_b\n\n");
+    // while (stack_b)
+	// {
+	// 	temp = stack_b->next;
+	// 	printf("%d\n", *((int *)stack_b->content));
+	// 	ft_lstdelone(stack_b, &free);
+	// 	stack_b = temp;
+	// }
 	return (0);
 }
