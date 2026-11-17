@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:40:16 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/16 13:57:50 by ctrzecik         ###   ########.fr       */
+/*   Updated: 2026/11/16 17:00:48 by ctrzecik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	pa(t_list **a, t_list **b)
 {
 	t_list	*top;
 
-	if (!b || !*b || !a)
+	if (!b || !*b)
 		return ;
 	top = *b;
 	*b = top->next;
@@ -61,7 +61,7 @@ void	pb(t_list **a, t_list **b)
 {
 	t_list	*top;
 
-	if (!a || !*a || !b)
+	if (!a || !*a)
 		return ;
 	top = *a;
 	*a = top->next;

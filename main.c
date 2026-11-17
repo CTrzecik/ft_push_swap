@@ -42,22 +42,22 @@ int	main(int argc, char **argv)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
 	printf("sel: %lu\n", selector);
-    //printf("\nstack_a\n\n");
-	// while (stack_a)
-	// {
-	// 	temp = stack_a->next;
-	// 	printf("%d\n", *((int *)stack_a->content));
-	// 	ft_lstdelone(stack_a, &free);
-	// 	stack_a = temp;
-	// }
+    printf("\nstack_a: disorder[%.2f]\n\n", disorder(&stack_a, ft_lstsize(stack_a)));
     simple_algorithm(&stack_a, &stack_b);
-    printf("\nstack_b\n\n");
-    while (stack_b)
+	while (stack_a)
 	{
-		temp = stack_b->next;
-		printf("%d\n", *((int *)stack_b->content));
-		ft_lstdelone(stack_b, &free);
-		stack_b = temp;
+		temp = stack_a->next;
+		printf("%d\n", *((int *)stack_a->content));
+		ft_lstdelone(stack_a, &free);
+		stack_a = temp;
 	}
+    // printf("\nstack_b\n\n");
+    // while (stack_b)
+	// {
+	// 	temp = stack_b->next;
+	// 	printf("%d\n", *((int *)stack_b->content));
+	// 	ft_lstdelone(stack_b, &free);
+	// 	stack_b = temp;
+	// }
 	return (0);
 }

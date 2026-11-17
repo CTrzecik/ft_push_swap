@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/16 15:59:01 by ctrzecik         ###   ########.fr       */
+/*   Updated: 2026/11/16 17:14:15 by ctrzecik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 void    simple_algorithm(t_list **a, t_list **b)
 {
-    // t_list  *save_a;
-    // t_list  *save_b;
+	t_list	*save_b;
 
-    // save_a = a;
-	// save_b = b;
-	pb(a, b);
-    while(*a)
+	
+	while(disorder(a, ft_lstsize(*a)) != 0)
 	{
 		pb(a, b);
-		if (*(int *)(*b)->content > *(int *)(*b)->next->content)
+		save_b = *b;
+		while(*a)
 		{
-			sb(b);
+			pb(a, b);
+			if (*(int *)(*b)->content < *(int *)(*b)->next->content)
+			{
+				sb(b);
+			}
 		}
-		else
-			*b = (*b)->next;
+		*b = save_b;
+		while(*b)
+			pa(a, b);
+		ra(a);
 	}
 }
