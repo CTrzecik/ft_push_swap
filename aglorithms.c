@@ -6,28 +6,51 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/16 15:59:01 by ctrzecik         ###   ########.fr       */
+/*   Updated: 2026/11/16 21:54:57 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    simple_algorithm(t_list **a, t_list **b)
+void	simple_algorithm(t_list **a, t_list **b)
 {
-    // t_list  *save_a;
-    // t_list  *save_b;
+	t_list	**cur;
+	int		*first;
+	int		*second;
+	size_t	len;
 
-    // save_a = a;
-	// save_b = b;
-	pb(a, b);
-    while(*a)
+	if (!a || !*a)
+		return ;
+	cur = a;
+	len = ft_lstsize(*cur);
+	while (len--)
 	{
-		pb(a, b);
-		if (*(int *)(*b)->content > *(int *)(*b)->next->content)
+		while (*cur && (*cur)->next)
 		{
-			sb(b);
+			first = (*cur)->content;
+			second = (*cur)->next->content;
+			if (*first < *second)
+				sa(cur);
+			cur = &(*cur)->next;
 		}
-		else
-			*b = (*b)->next;
+		pb(cur, b);
+		cur = a;
 	}
+	len = ft_lstsize(*b);
+	while (len--)
+		pa(a, b);
+}
+
+void	medium_algorithm(t_list **a, t_list **b)
+{
+	(void)a;
+	(void)b;
+	return ;
+}
+
+void	complex_algorithm(t_list **a, t_list **b)
+{
+	(void)a;
+	(void)b;
+	return ;
 }

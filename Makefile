@@ -6,13 +6,13 @@
 #    By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/24 16:56:54 by dibranco          #+#    #+#              #
-#    Updated: 2026/11/16 15:46:18 by ctrzecik         ###   ########.fr        #
+#    Updated: 2026/11/16 17:47:29 by dibranco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 LIBFT_DIR = $(PARENT_DIR)libft/
 LIBFT = $(LIBFT_DIR)libft.a
 LIBFTPRINTF_DIR = $(PARENT_DIR)ft_printf/

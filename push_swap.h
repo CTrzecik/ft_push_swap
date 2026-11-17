@@ -18,17 +18,19 @@ typedef enum e_stratsel
 	DEFAULT = 5
 }	t_stratsel;
 
-void	error(void);
 int		ft_strcmp(const char *s1, const char *s2);
 int		isdigit_str(const char *s);
 int		is_within_int_limit(long nbr);
-long	ft_atol(const char *nptr);
 int		isrepeat(const int nbr, const t_list *stack_a);
+long	ft_atol(const char *nptr);
+void	error(void);
 
-void	call_algo(const char *s, t_list stack_a, t_list stack_b);
 size_t	strategy_selector(const char *s);
 double	disorder(const int *a, int size);
+void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
 void    simple_algorithm(t_list **a, t_list **b);
+void	medium_algorithm(t_list **a, t_list **b);
+void	complex_algorithm(t_list **a, t_list **b);
 
 void	sa(t_list **a);
 void	sb(t_list **b);

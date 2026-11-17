@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
 
 void	fill_stack_a(int argc, char **argv, t_list **stack_a, int idx)
 {
@@ -41,21 +40,20 @@ int	main(int argc, char **argv)
 	if (selector != DEFAULT)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
-	printf("sel: %lu\n", selector);
-    //printf("\nstack_a\n\n");
-	// while (stack_a)
-	// {
-	// 	temp = stack_a->next;
-	// 	printf("%d\n", *((int *)stack_a->content));
-	// 	ft_lstdelone(stack_a, &free);
-	// 	stack_a = temp;
-	// }
-    simple_algorithm(&stack_a, &stack_b);
-    printf("\nstack_b\n\n");
+	call_algorithm(selector, &stack_a, &stack_b);
+	ft_printf("\nstack_a\n\n");
+	while (stack_a)
+	{
+		temp = stack_a->next;
+	 	ft_printf("%d\n", *((int *)stack_a->content));
+	 	ft_lstdelone(stack_a, &free);
+	 	stack_a = temp;
+	}
+    ft_printf("\nstack_b\n\n");
     while (stack_b)
 	{
 		temp = stack_b->next;
-		printf("%d\n", *((int *)stack_b->content));
+		ft_printf("%d\n", *((int *)stack_b->content));
 		ft_lstdelone(stack_b, &free);
 		stack_b = temp;
 	}
