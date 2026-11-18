@@ -6,7 +6,7 @@
 #    By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/24 16:56:54 by dibranco          #+#    #+#              #
-#    Updated: 2026/11/16 17:47:29 by dibranco         ###   ########.fr        #
+#    Updated: 2026/11/18 08:40:41 by dibranco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT_DIR = $(PARENT_DIR)libft/
 LIBFT = $(LIBFT_DIR)libft.a
 LIBFTPRINTF_DIR = $(PARENT_DIR)ft_printf/
 LIBFTPRINTF = $(LIBFTPRINTF_DIR)libftprintf.a
-SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c functions.c strategies.c
+SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c rules_a.c rules_b.c rules_s.c algorithms.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
