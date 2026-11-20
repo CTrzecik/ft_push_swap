@@ -17,7 +17,7 @@ LIBFT_DIR = $(PARENT_DIR)libft/
 LIBFT = $(LIBFT_DIR)libft.a
 LIBFTPRINTF_DIR = $(PARENT_DIR)ft_printf/
 LIBFTPRINTF = $(LIBFTPRINTF_DIR)libftprintf.a
-SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c rules_a.c rules_b.c rules_s.c algorithms.c medium_utils.c
+SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c rules_a.c rules_b.c rules_s.c algorithms.c medium_utils.c parser.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
