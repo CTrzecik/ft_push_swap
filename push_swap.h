@@ -28,10 +28,11 @@ void	error(void);
 
 size_t	strategy_selector(const char *s);
 void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
-double	disorder(t_list **a, int size);
+double	disorder(t_list **a);
 void    simple_algorithm(t_list **a, t_list **b);
 void	medium_algorithm(t_list **a, t_list **b);
 void	complex_algorithm(t_list **a, t_list **b);
+void	adaptive_algorithm(t_list **a, t_list **b);
 
 void	sa(t_list **a);
 void	sb(t_list **b);

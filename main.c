@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 	int			idx;
 	t_list		*stack_a;
 	t_list		*stack_b;
-	t_list		*temp;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -41,29 +40,7 @@ int	main(int argc, char **argv)
 		idx = 2;
 	fill_stack_a(argc, argv, &stack_a, idx);
 	call_algorithm(selector, &stack_a, &stack_b);
-	ft_printf("\nstack_a\n\n");
-	while (stack_a)
-	{
-		temp = stack_a->next;
-	 	ft_printf("%d\n", *((int *)stack_a->content));
-	 	ft_lstdelone(stack_a, &free);
-	 	stack_a = temp;
-	}
-    ft_printf("\nstack_b\n\n");
-    while (stack_b)
-	{
-		temp = stack_b->next;
-		ft_printf("%d\n", *((int *)stack_b->content));
-		ft_lstdelone(stack_b, &free);
-		stack_b = temp;
-	}
-    // printf("\nstack_b\n\n");
-    // while (stack_b)
-	// {
-	// 	temp = stack_b->next;
-	// 	printf("%d\n", *((int *)stack_b->content));
-	// 	ft_lstdelone(stack_b, &free);
-	// 	stack_b = temp;
-	// }
+	ft_lstclear(&stack_a, &free);
+	ft_lstclear(&stack_b, &free);
 	return (0);
 }

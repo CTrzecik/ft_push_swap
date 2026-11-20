@@ -25,5 +25,5 @@ void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b)
 	else if (selector == COMPLEX)
 		complex_algorithm(stack_a, stack_b);
 	else if (selector == ADAPTIVE || selector == DEFAULT)
-		simple_algorithm(stack_a, stack_b);
+		adaptive_algorithm(stack_a, stack_b);
 }

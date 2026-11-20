@@ -12,6 +12,7 @@ void	sb(t_list **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
+	ft_printf("sb\n");
 }
 
 void	pb(t_list **a, t_list **b)
@@ -23,6 +24,7 @@ void	pb(t_list **a, t_list **b)
 	top = *a;
 	*a = top->next;
 	ft_lstadd_front(b, top);
+	ft_printf("pb\n");
 }
 
 void	rb(t_list **b)
@@ -35,6 +37,7 @@ void	rb(t_list **b)
 	ft_lstlast(*b)->next = first;
 	*b = first->next;
 	first->next = NULL;
+	ft_printf("rb\n");
 }
 
 void	rrb(t_list **b)
@@ -51,4 +54,5 @@ void	rrb(t_list **b)
 	prev->next = NULL;
 	last->next = *b;
 	*b = last;
+	ft_printf("rrb\n");
 }

@@ -6,33 +6,35 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 10:14:39 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/16 16:08:11 by ctrzecik         ###   ########.fr       */
+/*   Updated: 2026/11/19 15:56:16 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	disorder(t_list **a, int size)
+double	disorder(t_list **a)
 {
-	int	mistakes;
-	int	total_pairs;
-	int	i;
-	int	j;
+	t_list	*first;
+	t_list	*second;
+	int		mistakes;
+	int		total_pairs;
     
-	i = 0;
+	first = *a;
 	mistakes = 0;
 	total_pairs = 0;
-	while (i <= size - 1)
+	while (first && first->next)
 	{
-		j = i + 1;
-		while (j <= size - 1)
+		second = first->next;
+		while (second)
 		{
 			total_pairs++;
-			if (*(int *)(*a)->content > *(int *)(*a)->next->content)
+			if (*(int *)first->content > *(int *)second->content)
 				mistakes++;
-			j++;
+			second = second->next;
 		}
-		i++;
+		first = first->next;
 	}
+	if (total_pairs == 0)
+		return (0);
 	return ((double)mistakes / total_pairs);
 }

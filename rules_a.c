@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:40:16 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/18 08:41:57 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/19 12:59:04 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sa(t_list **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
+	ft_printf("sa\n");
 }
 
 void	pa(t_list **a, t_list **b)
@@ -35,6 +36,7 @@ void	pa(t_list **a, t_list **b)
 	top = *b;
 	*b = top->next;
 	ft_lstadd_front(a, top);
+	ft_printf("pa\n");
 }
 
 void	ra(t_list **a)
@@ -47,6 +49,7 @@ void	ra(t_list **a)
 	ft_lstlast(*a)->next = first;
 	*a = first->next;
 	first->next = NULL;
+	ft_printf("ra\n");
 }
 
 void	rra(t_list **a)
@@ -63,4 +66,5 @@ void	rra(t_list **a)
 	prev->next = NULL;
 	last->next = *a;
 	*a = last;
+	ft_printf("rra\n");
 }
