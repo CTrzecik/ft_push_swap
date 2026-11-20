@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/20 11:25:09 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/20 14:11:31 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,13 @@ void	complex_algorithm(t_list **a, t_list **b)
 
 void	adaptive_algorithm(t_list **a, t_list **b)
 {
-	(void)a;
-	(void)b;
-	return ;
+	double dis; 
+
+	dis = disorder(a);
+	if (dis < 0.2)
+		simple_algorithm(a, b);
+	else if (dis >= 0.2 && dis < 0.5)
+		medium_algorithm(a, b);
+	else
+		complex_algorithm(a, b);
 }
