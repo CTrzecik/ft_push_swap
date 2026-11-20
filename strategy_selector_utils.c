@@ -1,5 +1,14 @@
 #include "push_swap.h"
 
+bool	isbenchmark(const char *s)
+{
+	if (!s)
+		error();
+	if (!ft_strcmp(s, "--bench"))
+		return (TRUE);
+	return (FALSE);
+}
+
 size_t	strategy_selector(const char *s)
 {
 	if (!s)

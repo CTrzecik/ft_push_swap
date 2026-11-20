@@ -6,6 +6,7 @@
 
 # include <stdlib.h> 
 # include <unistd.h>
+# include <curses.h>
 # include "libft/libft.h"
 # include "ft_dprintf/ft_dprintf.h"
 
@@ -34,6 +35,8 @@ void	sort_arr(int *arr, int size);
 int		max_passes(unsigned int max);
 void	ranking(t_list *a, int *arr);
 
+bool	isbenchmark(const char *s);
+void	benchmark_output(void);
 size_t	strategy_selector(const char *s);
 void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
 double	disorder(t_list **a);

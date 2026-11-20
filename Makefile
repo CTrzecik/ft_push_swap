@@ -6,7 +6,7 @@
 #    By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/24 16:56:54 by dibranco          #+#    #+#              #
-#    Updated: 2026/11/20 17:07:52 by dibranco         ###   ########.fr        #
+#    Updated: 2026/11/20 17:38:49 by dibranco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFTDPRINTF_DIR = $(PARENT_DIR)ft_dprintf/
 LIBFTDPRINTF = $(LIBFTDPRINTF_DIR)libftdprintf.a
 SRCS = main.c push_swap_utils.c strategy_selector_utils.c error.c disorder.c \
 	   rules_a.c rules_b.c rules_s.c algorithms.c parser.c \
-	   simple_algo_utils.c medium_algo_utils.c complex_algo_utils.c
+	   simple_algo_utils.c medium_algo_utils.c complex_algo_utils.c benchmark.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
