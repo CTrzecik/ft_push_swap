@@ -6,92 +6,11 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/20 14:11:31 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:06:31 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-unsigned int	find_min(t_list *a, int *min)
-{
-	int	pos;
-	int	i;
-
-	*min = *(int *)a->content;
-	i = 0;
-	pos = i;
-	while (a)
-	{
-		if (*min > *(int *)a->content)
-		{
-			*min = *(int *)a->content;
-			pos = i;
-		}
-		a = a->next;
-		i++;
-	}
-	return (pos);
-}
-
-void	sort_arr(int *arr, int size)
-{
-	int	i;
-	int	j;
-	int temp;
-
-	i = 0;
-	while (i < size -1)
-	{
-		j = 0;
-		while (j < size - i - 1)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-int	max_passes(unsigned int max)
-{
-	int len;
-	
-	len = 0;
-	while (max != 0)
-	{
-		max /= 2;
-		len++;
-	}
-	return (len);
-}
-
-void	ranking(t_list *a, int *arr)
-{
-	int 	idx;
-	t_list	*temp;
-
-	idx = 0;
-	temp = a;
-	while (temp)	
-	{
-		arr[idx++] = *(int *)temp->content;
-		temp = temp->next;
-	}
-	sort_arr(arr, idx);
-	idx = 0;
-	while (a)
-	{
-		while (*(int *)a->content != arr[idx])
-			idx++;
-		*(int *)a->content = idx;
-		idx = 0;
-		a = a->next;
-	}
-}
 
 void	simple_algorithm(t_list **a, t_list **b)
 {

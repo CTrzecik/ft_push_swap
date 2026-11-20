@@ -26,9 +26,13 @@ long	ft_atol(const char *nptr);
 void	error(void);
 
 int		count_smaller(t_list *cur, int n);
-void	push_chunks(t_list **a, t_list **b, int size, int chunks);
 int		find_max_pos(t_list *cur);
+void	push_chunks(t_list **a, t_list **b, int size, int chunks);
 void	push_back_max(t_list **a, t_list **b);
+int		find_min(t_list *a, int *min);
+void	sort_arr(int *arr, int size);
+int		max_passes(unsigned int max);
+void	ranking(t_list *a, int *arr);
 
 size_t	strategy_selector(const char *s);
 void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
