@@ -37,6 +37,8 @@ void string_split(char **argv, t_list **stack_a, int idx, int *num)
     i = 0;
     while (numbers_split[i])
     {
+         if (isrepeat(ft_atol(numbers_split[i]), *stack_a))
+             error();
         num = (int *)malloc(sizeof(int));
 		if (!num)
 			error();

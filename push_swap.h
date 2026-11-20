@@ -30,6 +30,7 @@ int	count_smaller(t_list *cur, int n);
 void	push_chunks(t_list **a, t_list **b, int size, int chunks);
 int	find_max_pos(t_list *cur);
 void	push_back_max(t_list **a, t_list **b);
+int	ft_sqrt_int(int nb);
 
 size_t	strategy_selector(const char *s);
 void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b);
