@@ -6,9 +6,8 @@
 
 # include <stdlib.h> 
 # include <unistd.h>
-# include <stdio.h>
 # include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "ft_dprintf/ft_dprintf.h"
 
 typedef enum e_stratsel
 {
@@ -26,9 +25,9 @@ int		isrepeat(const int nbr, const t_list *stack_a);
 long	ft_atol(const char *nptr);
 void	error(void);
 
-int	count_smaller(t_list *cur, int n);
+int		count_smaller(t_list *cur, int n);
 void	push_chunks(t_list **a, t_list **b, int size, int chunks);
-int	find_max_pos(t_list *cur);
+int		find_max_pos(t_list *cur);
 void	push_back_max(t_list **a, t_list **b);
 
 size_t	strategy_selector(const char *s);

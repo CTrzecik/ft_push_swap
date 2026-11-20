@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/06 15:04:51 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/06 15:08:28 by ctrzecik         ###   ########.fr       */
+/*   Created: 2026/10/24 16:56:31 by dibranco          #+#    #+#             */
+/*   Updated: 2026/11/06 14:48:39 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar(char c)
+int	ft_isprint(int c)
 {
-	return (write(1, &c, 1));
+	return (c >= ' ' && c <= '~');
 }

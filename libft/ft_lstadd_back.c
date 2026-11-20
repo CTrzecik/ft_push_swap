@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/06 15:06:15 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/06 16:18:22 by ctrzecik         ###   ########.fr       */
+/*   Created: 2026/10/28 15:21:48 by dibranco          #+#    #+#             */
+/*   Updated: 2026/11/03 11:09:36 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *str)
+void	ft_lstadd_back(t_list **lst, t_list *nw)
 {
-	int	i;
-
-	if (!str)
-		return (write(1, "(null)", 6));
-	i = 0;
-	while (str[i])
-	{
-		if (write(1, &str[i], 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	if (!lst || !nw)
+		return ;
+	if (*lst)
+		ft_lstlast(*lst)->next = nw;
+	else
+		*lst = nw;
 }
