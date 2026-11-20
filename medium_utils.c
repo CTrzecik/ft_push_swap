@@ -1,3 +1,4 @@
+#include "push_swap.h"
 
 int	count_smaller(t_list *cur, int n)
 {
