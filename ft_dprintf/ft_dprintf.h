@@ -6,7 +6,7 @@
 /*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 17:07:41 by dibranco          #+#    #+#             */
-/*   Updated: 2026/11/20 14:59:23 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/20 15:45:16 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ typedef enum e_fs
 	PERCENT = '%'
 }	t_fs;
 
-int	ft_printf(const char *s, ...);
+int	ft_dprintf(int fd, const char *s, ...);
 
-int	ft_putchar(const char c);
+int	ft_putchar(int fd, const char c);
 
-int	ft_putstr(const char *s);
+int	ft_putstr(int fd, const char *s);
 
-int	ft_putnbr(const int n);
+int	ft_putnbr(int fd, const int n);
 
-int	ft_putnbru(const unsigned int n);
+int	ft_putnbru(int fd, const unsigned int n);
 
 #endif

@@ -1,7 +1,8 @@
+#include "ft_dprintf/ft_dprintf.h"
 #include "push_swap.h"
 
 void	error(void)
 {
-	write(2, "Error\n", 6);
+	ft_dprintf(2, "Error\n");
 	exit(1);
 }

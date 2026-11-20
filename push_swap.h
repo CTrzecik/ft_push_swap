@@ -38,8 +38,8 @@ void	medium_algorithm(t_list **a, t_list **b);
 void	complex_algorithm(t_list **a, t_list **b);
 void	adaptive_algorithm(t_list **a, t_list **b);
 
-char **split_numbers(char **argv, int idx);
-void string_split(char **argv, t_list **stack_a, int idx, int *num);
+char 	**split_numbers(char **argv, int idx);
+void 	string_split(char **argv, t_list **stack_a, int idx, int *num);
 void	fill_stack_a(int argc, char **argv, t_list **stack_a, int idx);
 
 void	sa(t_list **a);
