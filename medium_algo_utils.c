@@ -1,5 +1,17 @@
 #include "push_swap.h"
 
+int	ft_sqrt_int(int nb)
+{
+	long	i;
+
+	if (nb < 0)
+		return (-1);
+	i = 0;
+	while ((i + 1) * (i + 1) <= nb)
+		i++;
+	return ((int)i);
+}
+
 int	count_smaller(t_list *cur, int n)
 {
 	int	count;
