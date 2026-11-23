@@ -16,7 +16,8 @@ int	count_smaller(t_list *cur, int n)
 
 /* Fase 1: manda tudo para b, um chunk de cada vez.
    O rank conta as duas pilhas, então não muda quando o número troca de pilha. */
-void	push_chunks(t_list **a, t_list **b, int size, int chunks)
+void	push_chunks(t_list **a, t_list **b, int size, int chunks,
+		t_benchmark *bm)
 {
 	int	i;
 	int	end;
@@ -35,11 +36,11 @@ void	push_chunks(t_list **a, t_list **b, int size, int chunks)
 			rank = count_smaller(*a, n) + count_smaller(*b, n);
 			if (rank < end)
 			{
-				pb(a, b);
+				pb(a, b, bm);
 				pushed++;
 			}
 			else
-				ra(a);
+				ra(a, bm);
 		}
 		i++;
 	}
@@ -70,7 +71,7 @@ int	find_max_pos(t_list *cur)
 
 /* Fase 2: devolve sempre o maior de b para a,
    girando b pelo caminho mais curto. */
-void	push_back_max(t_list **a, t_list **b)
+void	push_back_max(t_list **a, t_list **b, t_benchmark *bm)
 {
 	int	pos;
 	int	size;
@@ -82,14 +83,14 @@ void	push_back_max(t_list **a, t_list **b)
 		if (pos <= size / 2)
 		{
 			while (pos-- > 0)
-				rb(b);
+				rb(b, bm);
 		}
 		else
 		{
 			while (pos++ < size)
-				rrb(b);
+				rrb(b, bm);
 		}
-		pa(a, b);
+		pa(a, b, bm);
 	}
 }
 

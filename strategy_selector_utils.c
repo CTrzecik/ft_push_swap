@@ -25,14 +25,14 @@ size_t	strategy_selector(const char *s)
 		return (DEFAULT);
 }
 
-void	call_algorithm(const size_t selector, t_list **stack_a, t_list **stack_b)
+void	call_algorithm(t_benchmark *bm, t_list **stack_a, t_list **stack_b)
 {
-	if (selector == SIMPLE)
-		simple_algorithm(stack_a, stack_b);
-	else if (selector == MEDIUM)
-		medium_algorithm(stack_a, stack_b);
-	else if (selector == COMPLEX)
-		complex_algorithm(stack_a, stack_b);
-	else if (selector == ADAPTIVE || selector == DEFAULT)
-		adaptive_algorithm(stack_a, stack_b);
+	if (bm->selector == SIMPLE)
+		simple_algorithm(stack_a, stack_b, bm);
+	else if (bm->selector == MEDIUM)
+		medium_algorithm(stack_a, stack_b, bm);
+	else if (bm->selector == COMPLEX)
+		complex_algorithm(stack_a, stack_b, bm);
+	else if (bm->selector == ADAPTIVE || bm->selector == DEFAULT)
+		adaptive_algorithm(stack_a, stack_b, bm);
 }

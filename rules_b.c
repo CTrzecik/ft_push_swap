@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sb(t_list **b)
+void	sb(t_list **b, t_benchmark *bm)
 {
 	t_list	*first;
 	t_list	*second;
@@ -12,10 +12,10 @@ void	sb(t_list **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
-	ft_dprintf(1, "sb\n");
+	print_count_ops(&(bm->total_ops), &(bm->sb_ops), "sb");
 }
 
-void	pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b, t_benchmark *bm)
 {
 	t_list	*top;
 
@@ -24,10 +24,10 @@ void	pb(t_list **a, t_list **b)
 	top = *a;
 	*a = top->next;
 	ft_lstadd_front(b, top);
-	ft_dprintf(1, "pb\n");
+	print_count_ops(&(bm->total_ops), &(bm->pb_ops), "pb");
 }
 
-void	rb(t_list **b)
+void	rb(t_list **b, t_benchmark *bm)
 {
 	t_list *first;
 
@@ -37,10 +37,10 @@ void	rb(t_list **b)
 	ft_lstlast(*b)->next = first;
 	*b = first->next;
 	first->next = NULL;
-	ft_dprintf(1, "rb\n");
+	print_count_ops(&(bm->total_ops), &(bm->rb_ops), "rb");
 }
 
-void	rrb(t_list **b)
+void	rrb(t_list **b, t_benchmark *bm)
 {
 	t_list	*prev;
 	t_list	*last;
@@ -54,5 +54,5 @@ void	rrb(t_list **b)
 	prev->next = NULL;
 	last->next = *b;
 	*b = last;
-	ft_dprintf(1, "rrb\n");
+	print_count_ops(&(bm->total_ops), &(bm->rrb_ops), "rrb");
 }

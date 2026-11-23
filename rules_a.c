@@ -6,13 +6,13 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:40:16 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/20 15:50:40 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/23 10:04:44 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list **a)
+void	sa(t_list **a, t_benchmark *bm)
 {
 	t_list	*first;
 	t_list	*second;
@@ -24,10 +24,10 @@ void	sa(t_list **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
-	ft_dprintf(1, "sa\n");
+	print_count_ops(&(bm->total_ops), &(bm->sa_ops), "sa");
 }
 
-void	pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b, t_benchmark *bm)
 {
 	t_list	*top;
 
@@ -36,10 +36,10 @@ void	pa(t_list **a, t_list **b)
 	top = *b;
 	*b = top->next;
 	ft_lstadd_front(a, top);
-	ft_dprintf(1, "pa\n");
+	print_count_ops(&(bm->total_ops), &(bm->pa_ops), "pa");
 }
 
-void	ra(t_list **a)
+void	ra(t_list **a, t_benchmark *bm)
 {
 	t_list *first;
 
@@ -49,10 +49,10 @@ void	ra(t_list **a)
 	ft_lstlast(*a)->next = first;
 	*a = first->next;
 	first->next = NULL;
-	ft_dprintf(1, "ra\n");
+	print_count_ops(&(bm->total_ops), &(bm->ra_ops), "ra");
 }
 
-void	rra(t_list **a)
+void	rra(t_list **a, t_benchmark *bm)
 {
 	t_list	*prev;
 	t_list	*last;
@@ -66,5 +66,5 @@ void	rra(t_list **a)
 	prev->next = NULL;
 	last->next = *a;
 	*a = last;
-	ft_dprintf(1, "rra\n");
+	print_count_ops(&(bm->total_ops), &(bm->rra_ops), "rra");
 }

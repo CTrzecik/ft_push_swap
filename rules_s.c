@@ -1,22 +1,22 @@
 #include "push_swap.h"
 
-void	ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b, t_benchmark *bm)
 {
-	sa(a);
-	sb(b);
-	ft_dprintf(1, "ss\n");
+	sa(a, bm);
+	sb(b, bm);
+	print_count_ops(&(bm->total_ops), &(bm->ss_ops), "ss");
 }
 
-void	rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b, t_benchmark *bm)
 {
-	ra(a);
-	rb(b);
-	ft_dprintf(1, "rr\n");
+	ra(a, bm);
+	rb(b, bm);
+	print_count_ops(&(bm->total_ops), &(bm->rr_ops), "rr");
 }
 
-void	rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b, t_benchmark *bm)
 {
-	rra(a);
-	rrb(b);
-	ft_dprintf(1, "rrr\n");
+	rra(a, bm);
+	rrb(b, bm);
+	print_count_ops(&(bm->total_ops), &(bm->rrr_ops), "rrr");
 }
