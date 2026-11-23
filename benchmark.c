@@ -3,11 +3,11 @@
 
 void	benchmark_output(t_benchmark bm)
 {
-	dprintf(2, "[bench] disorder: %.2lf%%\n", bm.disorder);
+	ft_dprintf(2, "[bench] disorder: %f%%\n", bm.disorder * 100);
 	if (bm.selector == SIMPLE)
-		ft_dprintf(2, "[bench] strategy: Simple / O(n2)\n");
+		ft_dprintf(2, "[bench] strategy: Simple / O(n²)\n");
 	else if (bm.selector == MEDIUM)
-		ft_dprintf(2, "[bench] strategy: Medium / O(nsqrt(n))\n");
+		ft_dprintf(2, "[bench] strategy: Medium / O(√n)\n");
 	else if (bm.selector == COMPLEX)
 		ft_dprintf(2, "[bench] strategy: Complex / O(nlog(n))\n");
 	ft_dprintf(2, "[bench] total_ops: %d\n", bm.total_ops);

@@ -6,7 +6,7 @@
 /*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 17:07:41 by dibranco          #+#    #+#             */
-/*   Updated: 2026/11/20 15:45:16 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/23 14:25:43 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef enum e_fs
 	UDEC = 'u',
 	HEXL = 'x',
 	HEXU = 'X',
+	FLOAT = 'f',
 	PERCENT = '%'
 }	t_fs;
 
@@ -42,5 +43,13 @@ int	ft_putstr(int fd, const char *s);
 int	ft_putnbr(int fd, const int n);
 
 int	ft_putnbru(int fd, const unsigned int n);
+
+int	base16(int fd, unsigned long l, char *base, size_t count);
+
+int	address(int fd, const void *s);
+
+int	format(int fd, const char c, va_list args);
+
+int	print(int fd, const char *s, va_list args);
 
 #endif
