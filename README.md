@@ -15,11 +15,9 @@ depending on the constraints like memory usage, stability and number of operatio
 
 In regards to the simple algorithm, selection sort was the chosen choice.
 
-Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the   
-unsorted portion and swapping it with the first unsorted element.
+Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the unsorted portion and swapping it with the first unsorted element.
 
-However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted    
-element we pushed the smallest element to the stack b and did successively, until there is one element left   
+However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted element we pushed the smallest element to the stack b and did successively, until there is one element left   
 and push everything back to stack a.
 
 This algorithm was primarly chosen not just for it's simplicity but also the number of operations to organize a stack.
