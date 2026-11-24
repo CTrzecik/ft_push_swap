@@ -2,8 +2,7 @@
 
 ## Description
 
-This project is all about ordering numbers from ascending order in the most efficent way possible, with a handful of allowed moves
-
+This project is all about ordering numbers from ascending order in the most efficent way possible, with a handful of allowed moves     
 and with only two stacks available to us.
 
 Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in a algorithm extremely important,
@@ -16,14 +15,11 @@ depending on the constraints like memory usage, stability and number of operatio
 
 In regards to the simple algorithm, selection sort was the chosen choice.
 
-Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the
-
+Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the   
 unsorted portion and swapping it with the first unsorted element.
 
-However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted
-
-element we pushed the smallest element to the stack b and did successively, until there is one element left
-
+However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted    
+element we pushed the smallest element to the stack b and did successively, until there is one element left   
 and push everything back to stack a.
 
 This algorithm was primarly chosen not just for it's simplicity but also the number of operations to organize a stack.
@@ -38,21 +34,16 @@ Allusive to the medium algorithm, a chunk-based sorting algorithm was chosen.
 
 Regarding the complex algorithm, radix sort Least Significant Digit (LSD) was used.
 
-An adapatation had to be made for this type of algorithm, reason being that for base 10 integers,
-
-10 buckets would be needed to sort, however using base 2, otherwise know as binary we can reduce it to two
-
+An adapatation had to be made for this type of algorithm, reason being that for base 10 integers,    
+10 buckets would be needed to sort, however using base 2, otherwise know as binary we can reduce it to two   
 buckets, which is perfect for having only two stacks to work with.
 
 The main idea of radix sort is comparing the least significant digit between 1 or 0.
 
-If it's 0, we push it to stack b, if not we rotate a. Everytime we go through stack a, we push everything that's
-
+If it's 0, we push it to stack b, if not we rotate a. Everytime we go through stack a, we push everything that's   
 in stack b onto a, doing this n times (n being determined by the size of the linked list).
 
-This algorithm was primarly chosen for being the most consistent out of the bunch and also being within the two stack
-
-limit.
+This algorithm was primarly chosen for being the most consistent out of the bunch and also being within the two stack limit.
 
 ## Instructions
 
