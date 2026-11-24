@@ -5,8 +5,7 @@
 This project is all about ordering numbers from ascending order in the most efficent way possible, with a handful of allowed moves     
 and with only two stacks available to us.
 
-Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in a algorithm extremely important,
-
+Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in a algorithm extremely important,     
 depending on the constraints like memory usage, stability and number of operations to sort a stack.
 
 ### Technical choices
@@ -17,8 +16,8 @@ In regards to the simple algorithm, selection sort was the chosen choice.
 
 Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the unsorted portion and swapping it with the first unsorted element.
 
-However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted element we pushed the smallest element to the stack b and did successively, until there is one element left   
-and push everything back to stack a.
+However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted element we pushed the smallest element to the stack b and did successively,     
+until there is one element left and push everything back to stack a.
 
 This algorithm was primarly chosen not just for it's simplicity but also the number of operations to organize a stack.
 
