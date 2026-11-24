@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/23 10:20:17 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:36:02 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	simple_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 void	medium_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 {
 	int	size;
-    if (!a || !*a || disorder(a) == 0)
+    if (!a || !*a || bm->disorder == 0)
 		return ;        
 	size = ft_lstsize(*a);
 	if (size < 2)
@@ -85,18 +85,9 @@ void	complex_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 void	adaptive_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 {
 	if (bm->disorder < 0.2)
-	{
-		bm->selector = SIMPLE;
 		simple_algorithm(a, b, bm);
-	}
 	else if (bm->disorder >= 0.2 && bm->disorder < 0.5)
-	{
-		bm->selector = MEDIUM;
 		medium_algorithm(a, b, bm);
-	}
 	else
-	{
-		bm->selector = COMPLEX;
 		complex_algorithm(a, b, bm);
-	}
 }

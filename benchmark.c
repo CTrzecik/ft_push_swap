@@ -9,6 +9,15 @@ void	benchmark_output(t_benchmark bm)
 		ft_dprintf(2, "[bench] strategy: Medium / O(√n)\n");
 	else if (bm.selector == COMPLEX)
 		ft_dprintf(2, "[bench] strategy: Complex / O(nlog(n))\n");
+	else if (bm.selector == ADAPTIVE || bm.selector == DEFAULT)
+	{
+		if (bm.disorder < 0.2)
+			ft_dprintf(2, "[bench] strategy: Adaptive / O(n²)\n");
+		else if (bm.disorder >= 0.2 && bm.disorder < 0.5)
+			ft_dprintf(2, "[bench] strategy: Adaptive / O(√n)\n");
+		else
+			ft_dprintf(2, "[bench] strategy: Adaptive / O(nlog(n))\n");
+	}
 	ft_dprintf(2, "[bench] total_ops: %d\n", bm.total_ops);
 	ft_dprintf(2, "[bench] sa: %d sb: %d ss: %d pa: %d pb %d\n",
 		bm.sa_ops, bm.sb_ops, bm.ss_ops, bm.pa_ops, bm.pb_ops);
