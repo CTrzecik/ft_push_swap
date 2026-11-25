@@ -1,27 +1,36 @@
 #include "push_swap.h"
 
-void	sort_arr(int *arr, int size)
+void	swap(int *a, int *b)
 {
-	int	i;
-	int	j;
 	int	temp;
 
-	i = 0;
-	while (i < size -1)
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void	sort_arr(int *arr, int low, int high)
+{
+	int pivot = arr[high];
+	int	start = low;
+	int	end = high;
+
+	if (low >= high)
+		return ;
+	while (start < end)
 	{
-		j = 0;
-		while (j < size - i - 1)
+		while (arr[start] < pivot)
+			start++;
+		while (arr[end] > pivot)
+			end--;
+		if (start < end)
 		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
+			swap(&arr[start], &arr[end]);
+			start++;
 		}
-		i++;
 	}
+	sort_arr(arr, low, start - 1);
+	sort_arr(arr, start, high);
 }
 
 int	max_passes(unsigned int max)
@@ -53,7 +62,7 @@ void	ranking(t_list *a)
 		arr[idx++] = *(int *)temp->content;
 		temp = temp->next;
 	}
-	sort_arr(arr, idx);
+	sort_arr(arr, 0, idx - 1);
 	idx = 0;
 	while (a)
 	{

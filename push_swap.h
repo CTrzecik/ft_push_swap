@@ -52,7 +52,8 @@ void	push_chunks(t_list **a, t_list **b, int size, int chunks,
 void	push_back_max(t_list **a, t_list **b, t_benchmark *bm);
 int	ft_sqrt_int(int nb);
 int		find_min(t_list *a, int *min);
-void	sort_arr(int *arr, int size);
+void	sort_arr(int *arr, int low, int high);
+void	swap(int *a, int *b);
 int		max_passes(unsigned int max);
 void	ranking(t_list *a);
 

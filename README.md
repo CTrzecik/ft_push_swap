@@ -2,45 +2,62 @@
 
 ## Description
 
-This project is all about ordering numbers from ascending order in the most efficent way possible, with a handful of allowed moves     
+This project is all about sorting numbers in ascending order in the most efficient way possible, with a handful of allowed moves     
 and with only two stacks available to us.
 
-Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in a algorithm extremely important,     
+Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in an algorithm extremely important,     
 depending on the constraints like memory usage, stability and number of operations to sort a stack.
 
 ### Technical choices
 
 #### Simple algorithm $O(n^2)$
 
-In regards to the simple algorithm, selection sort was the chosen choice.
+In regards to the simple algorithm, selection sort was chosen.
 
-Selection sort being a comparsion-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the unsorted portion and swapping it with the first unsorted element.
+Selection sort is a comparison-based sorting algorithm. It sorts by repeatedly selecting the smallest element from the unsorted portion and swapping it with the first unsorted element.
 
-However for our use case we had to adapt it for two stacks, so unstead of swapping the smallest element with the first unsorted element we pushed the smallest element to the stack b and did successively,     
-until there is one element left and push everything back to stack a.
+However for our use case we had to adapt it for two stacks, so instead of swapping the smallest element with the first unsorted element we pushed the smallest element to the stack b and did this repeatedly,     
+until one element remains, then push everything back to stack a.
 
-This algorithm was primarly chosen not just for it's simplicity but also the number of operations to organize a stack.
+This algorithm was primarily chosen not just for its simplicity but also the number of operations to organize a stack.
 
 Being much more efficent than a standard bubble sort in terms of number of operations required to sort a stack.
+
+##### Performance
+
+Roughly *1,481* ops for 100 random numbers, and rougly *31,894* ops for 500 random numbers.
 
 #### Medium algorithm $O(\sqrt{n})$
 
 Allusive to the medium algorithm, a chunk-based sorting algorithm was chosen.
 
+##### Performance
+
+Roughly *790* ops for 100 random numbers, and rougly *8,164* ops for 500 random numbers.
+
 #### Complex algorithm $O(n\log{n})$
 
 Regarding the complex algorithm, radix sort Least Significant Digit (LSD) was used.
 
-An adapatation had to be made for this type of algorithm, reason being that for base 10 integers,    
-10 buckets would be needed to sort, however using base 2, otherwise know as binary we can reduce it to two   
+An adaptation had to be made for this type of algorithm, reason being that for base 10 integers,    
+10 buckets would be needed to sort, however using base 2, otherwise known as binary we can reduce it to two   
 buckets, which is perfect for having only two stacks to work with.
 
-The main idea of radix sort is comparing the least significant digit between 1 or 0.
+The main idea of radix sort is comparing the least significant digit between 1 or 0, simulating two buckets.
 
-If it's 0, we push it to stack b, if not we rotate a. Everytime we go through stack a, we push everything that's   
-in stack b onto a, doing this n times (n being determined by the size of the linked list).
+We do n passes through stack a (n being the bit-width of the highest rank, so typically $O(n\log{n})$ in passes). Each pass processes the elements, giving rougly $O(n\log{n})$ operations.
 
-This algorithm was primarly chosen for being the most consistent out of the bunch and also being within the two stack limit.
+For each pass we verify if the bit is 1, if so we rotate a, if not we push it to b, which keeps within the stack limit of this project and keeps operations count reasonable.
+
+However know that negative numbers are the largest in binary format, rankings had to be implemented and then sorted to prevent this issue.
+
+Quicksort with Hoare's partition algorithm (which is typically $O(n\log{n})$ average time and $O(n^2)$ worst-case time, also being $O(1)$ in space).
+
+This algorithm was primarily chosen for being the most consistent out of the bunch and also being within the two stack limit.
+
+##### Performance
+
+*1,084* ops for 100 random numbers, *6,784* ops for 500 random numbers.
 
 ## Instructions
 
@@ -52,7 +69,7 @@ You must run the command make in the root directory of the project.
 make
 ```
 
-Which will run the implicit rule **all**, compiling every source file into object file and archiving them.
+Which will run the implicit rule **all**, compiling every source file into an object file and linking them into the `push_swap` binary.
 
 There's also the command:
 
@@ -60,15 +77,15 @@ There's also the command:
 make clean
 ```
 
-Which will remove all object files, excluding the archive file.
+Which will remove all object files, excluding the binary.
 
-If the removal of the archive file is needed run the command below:
+If the removal of the binary is needed run the command below:
 
 ```bash
 make fclean
 ```
 
-Like the previous rule it will remove all object files, including the archive file.
+Like `clean` it removes all object files, including the binary.
 
 Last but not least
 
@@ -78,7 +95,7 @@ make re
 
 This will run fclean followed by all, rebuilding everything from scratch.
 
-You can run the binary `push_swap` by running it in bash as shown below and also supplementing it with range of numbers that you want to order:
+You can run the binary `push_swap` in the shell as shown below and also supplementing it with numbers to sort:
 
 ```bash
 ./push_swap 4 2 3 1
@@ -89,7 +106,7 @@ You can run the binary `push_swap` by running it in bash as shown below and also
 
 ### Strategy Selector
 
-There's four different strategies that can be applied to a stack, in other words algorithms.
+There's four sorting strategies that can be applied to a stack.
 
 Firstly, the `--simple` flag can be used to force a $O(n^2)$ algorithm.
 
@@ -97,14 +114,14 @@ Secondly, the `--medium` flag can be used to force a $O(\sqrt{n})$ algorithm.
 
 Thirdly, the `--complex` flag can be used to force a $O(n\log{n})$ algorithm.
 
-Lastly, the `--adapive` flag can be used to run adaptive algorithm based on the disorder.
+Lastly, the `--adaptive` flag can be used to run adaptive algorithm based on the disorder.
 
 > [!IMPORTANT]
 > The strategy selector flag can be omitted, doing so will default to the `--adaptive` flag.
 
 ### Optional benchmark mode
 
-There's also a optional benchmark mode that can be used, as shown below.
+There's also an optional benchmark mode that can be used, as shown below.
 
 ```bash
 ./push_swap --bench 4 2 3 1
@@ -118,7 +135,7 @@ Using this flag will write some information after sorting:
 - The count of each operation type.
 
 > [!NOTE]
-> This output will be written in `stderr` and also prefixed with `[bench]`.
+> This output will be written to `stderr` and also prefixed with `[bench]`.
 
 Here's an example:
 
@@ -126,15 +143,18 @@ Here's an example:
 [bench] disorder: 83.33%
 [bench] strategy: Complex / O(nlog(n))
 [bench] total_ops: 12
-[bench] sa: 0 sb: 0 ss: 0 pa: 4 pb 4
-[bench] ra: 4 rb: 0 rr: 0 rra: 0 rrb 0 rrr 0
+[bench] sa: 0 sb: 0 ss: 0 pa: 4 pb: 4
+[bench] ra: 4 rb: 0 rr: 0 rra: 0 rrb: 0 rrr: 0
 ```
 
 ## Resources
 
-AI was mostly used for research, predominantly on the selection of each algorithm class,   
-also was used for implementation of code and understanding drawbacks and pros for each.
+AI was mostly used for research, predominantly on algorithm choice and explanation, however it also helped with explaining and debugging code.
+
+Additionally, it also helped spell check and drafting advice for the readme.
 
 Also some other resources like websites were used:   
-[Which sorting algorthm is best and why - GeeksforGeeks](https://www.geeksforgeeks.org/dsa/gfact-which-sorting-algorithm-is-best-and-why/)
+
+[Which sorting algorithm is best and why - GeeksforGeeks](https://www.geeksforgeeks.org/dsa/gfact-which-sorting-algorithm-is-best-and-why/)
+
 [Explanation on selection sort - GeeksforGeeks](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)

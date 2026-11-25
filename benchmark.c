@@ -19,9 +19,9 @@ void	benchmark_output(t_benchmark bm)
 			ft_dprintf(2, "[bench] strategy: Adaptive / O(nlog(n))\n");
 	}
 	ft_dprintf(2, "[bench] total_ops: %d\n", bm.total_ops);
-	ft_dprintf(2, "[bench] sa: %d sb: %d ss: %d pa: %d pb %d\n",
+	ft_dprintf(2, "[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n",
 		bm.sa_ops, bm.sb_ops, bm.ss_ops, bm.pa_ops, bm.pb_ops);
-	ft_dprintf(2, "[bench] ra: %d rb: %d rr: %d rra: %d rrb %d rrr %d\n",
+	ft_dprintf(2, "[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n",
 		bm.ra_ops, bm.rb_ops, bm.rr_ops, bm.rra_ops, bm.rrb_ops, bm.rrr_ops);
 }
 
