@@ -29,7 +29,7 @@ void	pb(t_list **a, t_list **b, t_benchmark *bm)
 
 void	rb(t_list **b, t_benchmark *bm)
 {
-	t_list *first;
+	t_list	*first;
 
 	if (!b)
 		return ;

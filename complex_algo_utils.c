@@ -4,7 +4,7 @@ void	sort_arr(int *arr, int size)
 {
 	int	i;
 	int	j;
-	int temp;
+	int	temp;
 
 	i = 0;
 	while (i < size -1)
@@ -26,8 +26,8 @@ void	sort_arr(int *arr, int size)
 
 int	max_passes(unsigned int max)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	while (max != 0)
 	{
@@ -37,14 +37,18 @@ int	max_passes(unsigned int max)
 	return (len);
 }
 
-void	ranking(t_list *a, int *arr)
+void	ranking(t_list *a)
 {
-	int 	idx;
+	int		idx;
 	t_list	*temp;
+	int		*arr;
 
 	idx = 0;
 	temp = a;
-	while (temp)	
+	arr = malloc(ft_lstsize(a) * sizeof(int));
+	if (!arr)
+		error();
+	while (temp)
 	{
 		arr[idx++] = *(int *)temp->content;
 		temp = temp->next;
@@ -59,5 +63,5 @@ void	ranking(t_list *a, int *arr)
 		idx = 0;
 		a = a->next;
 	}
+	free(arr);
 }
-

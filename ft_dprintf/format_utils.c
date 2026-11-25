@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   format_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/25 13:57:40 by dibranco          #+#    #+#             */
+/*   Updated: 2026/11/25 13:57:52 by dibranco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_dprintf.h"
 
-int putfloat(int fd, double num)
+int	putfloat(int fd, double num)
 {
 	int		qnt;
 
@@ -104,4 +116,3 @@ int	print(int fd, const char *s, va_list args)
 	}
 	return (qnt_of_chars);
 }
-

@@ -78,7 +78,7 @@ make re
 
 This will run fclean followed by all, rebuilding everything from scratch.
 
-You can run the binary push_swap by running it in bash as shown below and also supplementing it with range of numbers that you want to order:
+You can run the binary `push_swap` by running it in bash as shown below and also supplementing it with range of numbers that you want to order:
 
 ```bash
 ./push_swap 4 2 3 1
@@ -132,6 +132,9 @@ Here's an example:
 
 ## Resources
 
-AI was mostly used for research, predominantly on the selection of each algorithm class,
-
+AI was mostly used for research, predominantly on the selection of each algorithm class,   
 also was used for implementation of code and understanding drawbacks and pros for each.
+
+Also some other resources like websites were used:   
+[Which sorting algorthm is best and why - GeeksforGeeks](https://www.geeksforgeeks.org/dsa/gfact-which-sorting-algorithm-is-best-and-why/)
+[Explanation on selection sort - GeeksforGeeks](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)

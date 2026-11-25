@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/24 19:36:02 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:16:03 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ void	simple_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 		pa(a, b, bm);
 }
 
-
 void	medium_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 {
 	int	size;
-    if (!a || !*a || bm->disorder == 0)
-		return ;        
+
+	if (!a || !*a || bm->disorder == 0)
+		return ;
 	size = ft_lstsize(*a);
 	if (size < 2)
 		return ;
@@ -55,14 +55,10 @@ void	complex_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 	unsigned int	size;
 	unsigned int	i;
 	unsigned int	nbr_passes;
-	int				*arr;
 
 	if (!a || !*a || bm->disorder == 0)
 		return ;
-	arr = malloc(ft_lstsize(*a) * sizeof(int));
-	if (!arr)
-		error();
-	ranking(*a, arr);
+	ranking(*a);
 	nbr_passes = max_passes(ft_lstsize(*a) - 1);
 	i = 0;
 	while (nbr_passes > i)
@@ -79,7 +75,6 @@ void	complex_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 			pa(a, b, bm);
 		i++;
 	}
-	free(arr);
 }
 
 void	adaptive_algorithm(t_list **a, t_list **b, t_benchmark *bm)

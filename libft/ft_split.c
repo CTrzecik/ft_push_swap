@@ -6,11 +6,12 @@
 /*   By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 09:19:58 by dibranco          #+#    #+#             */
-/*   Updated: 2026/11/01 18:37:50 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:34:53 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {

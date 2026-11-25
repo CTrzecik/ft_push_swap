@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 10:14:39 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/19 15:56:16 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:10:28 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ double	disorder(t_list **a)
 	t_list	*second;
 	int		mistakes;
 	int		total_pairs;
-    
+
 	first = *a;
 	mistakes = 0;
 	total_pairs = 0;

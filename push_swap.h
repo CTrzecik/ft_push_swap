@@ -48,13 +48,13 @@ void	error(void);
 int		count_smaller(t_list *cur, int n);
 int		find_max_pos(t_list *cur);
 void	push_chunks(t_list **a, t_list **b, int size, int chunks,
-		t_benchmark *bm);
+			t_benchmark *bm);
 void	push_back_max(t_list **a, t_list **b, t_benchmark *bm);
 int	ft_sqrt_int(int nb);
 int		find_min(t_list *a, int *min);
 void	sort_arr(int *arr, int size);
 int		max_passes(unsigned int max);
-void	ranking(t_list *a, int *arr);
+void	ranking(t_list *a);
 
 bool	isbenchmark(const char *s);
 void	benchmark_output(t_benchmark bm);

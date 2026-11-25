@@ -105,4 +105,3 @@ void	push_back_max(t_list **a, t_list **b, t_benchmark *bm)
 		pa(a, b, bm);
 	}
 }
-

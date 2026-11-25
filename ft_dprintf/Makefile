@@ -6,13 +6,13 @@
 #    By: dibranco <dibranco@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/24 16:56:54 by dibranco          #+#    #+#              #
-#    Updated: 2026/11/23 14:41:52 by dibranco         ###   ########.fr        #
+#    Updated: 2026/11/25 12:13:15 by dibranco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftdprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 AR = ar crs
 HEADER = ft_dprintf.h
 SRCS = ft_dprintf.c ft_dprintf_utils.c format_utils.c

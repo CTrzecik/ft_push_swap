@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:40:16 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/23 10:04:44 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/25 14:10:44 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	pa(t_list **a, t_list **b, t_benchmark *bm)
 
 void	ra(t_list **a, t_benchmark *bm)
 {
-	t_list *first;
+	t_list	*first;
 
 	if (!a || !*a)
 		return ;
