@@ -7,7 +7,7 @@
         - [Simple algorithm](#simple-algorithm)
         - [Medium algorithm](#medium-algorithm)
         - [Complex algorithm](#complex-algorithm)
-        - [Performance](#performance)
+    - [Performance](#performance)
 2. [Instructions](#instructions)
     - [Strategy selector](#strategy-selector)
     - [Optional benchmark mode](#optional-benchmark-mode)
@@ -68,7 +68,7 @@ Quicksort with Hoare's parition algorithm typically $O(n\log{n})$ average time a
 
 This algorithm was primarily chosen for being the most consistent out of the bunch and also being within the two stack limit.
 
-#### Performance
+### Performance
 
 
 | Algorithm | 100 nums | 500 nums |
