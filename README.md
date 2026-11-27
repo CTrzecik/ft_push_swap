@@ -60,9 +60,11 @@ We do n passes through stack a (n being the bit-width of the highest rank, so ty
 
 For each pass we verify if the bit is 1, if so we rotate a, if not we push it to b, which keeps within the stack limit of this project and keeps operations count reasonable.
 
-However know that negative numbers are the largest in binary format, rankings had to be implemented and then sorted to prevent this issue.
+However knowing that negative numbers are the largest in binary format, rankings had to be implemented and then sorted to prevent this issue.
 
-Quicksort with Hoare's partition algorithm (which is typically $O(n\log{n})$ average time and $O(n^2)$ worst-case time, also being $O(1)$ in space).
+To do the rankings, quicksort with Hoare's partition algorithm was used to sort the stack and then give rankings accordingly, then find each value within the stack and give it the index from where it found the value.
+
+Quicksort with Hoare's parition algorithm typically $O(n\log{n})$ average time and $O(n^2)$ worst-case time, also being $O(1)$ in space.
 
 This algorithm was primarily chosen for being the most consistent out of the bunch and also being within the two stack limit.
 
@@ -73,7 +75,7 @@ This algorithm was primarily chosen for being the most consistent out of the bun
 |:----------|:---------|:---------|
 |Selection sort|*1,481*|*31,894*|
 |Chunk-based sort|*790*|*8,164*|
-|Binary Radix sort|*1, 1084*|*6,784*|
+|Binary Radix sort|*1,084*|*6,784*|
 
 
 > [!NOTE]
