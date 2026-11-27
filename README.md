@@ -45,7 +45,7 @@ These buckets are formed by uniformly distrubuting the elements. Once the elemen
 
 In our case a selection sort, which seaches for the biggest value and pushes that back to stack a and repeats the process until stack b is empty.
 
-The reason for chooseing this sorting algorithm was for operation efficency. Choosing pushes depending on value ranges in a chunk and rotating if not within that range, reduces uneccessary operations and sorts the stack in chunks making the selection sort spend less operations to sorting everything correctly.
+The reason for chooseing this sorting algorithm was for operation efficency. Choosing pushes depending on value ranges in a chunk and rotating if not within that range, reduces unneccessary operations and sorts the stack in chunks making the selection sort spend less operations to sorting everything correctly.
 
 #### Complex algorithm $O(n\log{n})$
 
