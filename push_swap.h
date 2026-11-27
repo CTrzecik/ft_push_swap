@@ -47,10 +47,9 @@ void	error(void);
 
 int		count_smaller(t_list *cur, int n);
 int		find_max_pos(t_list *cur);
-void	push_chunks(t_list **a, t_list **b, int size, int chunks,
-			t_benchmark *bm);
+void	push_chunks(t_list **a, t_list **b, int size, t_benchmark *bm);
 void	push_back_max(t_list **a, t_list **b, t_benchmark *bm);
-int	ft_sqrt_int(int nb);
+int		ft_sqrt_int(int nb);
 int		find_min(t_list *a, int *min);
 void	sort_arr(int *arr, int low, int high);
 void	swap(int *a, int *b);

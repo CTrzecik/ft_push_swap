@@ -1,12 +1,24 @@
 *This project has been created as part of the 42 curriculum by ctrzecik, dibranco*
 
+## Table of Contents
+
+1. [Description](#description)
+    - [Technical choices](#technical-choices)
+        - [Simple algorithm](#simple-algorithm)
+        - [Medium algorithm](#medium-algorithm)
+        - [Complex algorithm](#complex-algorithm)
+        - [Performance](#performance)
+2. [Instructions](#instructions)
+    - [Strategy selector](#strategy-selector)
+    - [Optional benchmark mode](#optional-benchmark-mode)
+3. [Resources](#resources)
+
 ## Description
 
 This project is all about sorting numbers in ascending order in the most efficient way possible, with a handful of allowed moves     
 and with only two stacks available to us.
 
-Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in an algorithm extremely important,     
-depending on the constraints like memory usage, stability and number of operations to sort a stack.
+Additionally, it allowed us to discover algorithmic complexity in a very concrete way, making the choice in an algorithm extremely important, depending on the constraints like memory usage, stability and number of operations to sort a stack.
 
 ### Technical choices
 
@@ -23,24 +35,23 @@ This algorithm was primarily chosen not just for its simplicity but also the num
 
 Being much more efficent than a standard bubble sort in terms of number of operations required to sort a stack.
 
-##### Performance
-
-Roughly *1,481* ops for 100 random numbers, and rougly *31,894* ops for 500 random numbers.
-
 #### Medium algorithm $O(\sqrt{n})$
 
 Allusive to the medium algorithm, a chunk-based sorting algorithm was chosen.
 
-##### Performance
+Chunk-based sort is a sorting technique that involves dividing elements into $\sqrt{n}$ buckets.
 
-Roughly *790* ops for 100 random numbers, and rougly *8,164* ops for 500 random numbers.
+These buckets are formed by uniformly distrubuting the elements. Once the elements are divided into buckets into buckets, they can be sorted using any other sorting algorithm.
+
+In our case a selection sort, which seaches for the biggest value and pushes that back to stack a and repeats the process until stack b is empty.
+
+The reason for chooseing this sorting algorithm was for operation efficency. Choosing pushes depending on value ranges in a chunk and rotating if not within that range, reduces uneccessary operations and sorts the stack in chunks making the selection sort spend less operations to sorting everything correctly.
 
 #### Complex algorithm $O(n\log{n})$
 
 Regarding the complex algorithm, radix sort Least Significant Digit (LSD) was used.
 
-An adaptation had to be made for this type of algorithm, reason being that for base 10 integers,    
-10 buckets would be needed to sort, however using base 2, otherwise known as binary we can reduce it to two   
+An adaptation had to be made for this type of algorithm, reason being that for base 10 integers, 10 buckets would be needed to sort, however using base 2, otherwise known as binary we can reduce it to two
 buckets, which is perfect for having only two stacks to work with.
 
 The main idea of radix sort is comparing the least significant digit between 1 or 0, simulating two buckets.
@@ -55,9 +66,18 @@ Quicksort with Hoare's partition algorithm (which is typically $O(n\log{n})$ ave
 
 This algorithm was primarily chosen for being the most consistent out of the bunch and also being within the two stack limit.
 
-##### Performance
+#### Performance
 
-*1,084* ops for 100 random numbers, *6,784* ops for 500 random numbers.
+
+| Algorithm | 100 nums | 500 nums |
+|:----------|:---------|:---------|
+|Selection sort|*1,481*|*31,894*|
+|Chunk-based sort|*790*|*8,164*|
+|Binary Radix sort|*1, 1084*|*6,784*|
+
+
+> [!NOTE]
+> Below is the performance of each algorithm determined by quantity of nums, results are based off the average of three runs.
 
 ## Instructions
 
@@ -104,7 +124,7 @@ You can run the binary `push_swap` in the shell as shown below and also suppleme
 > [!NOTE]
 > The first argument represents the top of stack, descending to the bottom.
 
-### Strategy Selector
+### Strategy selector
 
 There's four sorting strategies that can be applied to a stack.
 

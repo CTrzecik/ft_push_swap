@@ -26,27 +26,24 @@ int	count_smaller(t_list *cur, int n)
 	return (count);
 }
 
-/* Fase 1: manda tudo para b, um chunk de cada vez.
-   O rank conta as duas pilhas, então não muda quando o número troca de pilha. */
-void	push_chunks(t_list **a, t_list **b, int size, int chunks,
-		t_benchmark *bm)
+void	push_chunks(t_list **a, t_list **b, int size, t_benchmark *bm)
 {
 	int	i;
-	int	end;
 	int	pushed;
 	int	n;
 	int	rank;
+	int	chunks;
 
+	chunks = ft_sqrt_int(size);
 	pushed = 0;
-	i = 0;
-	while (i < chunks)
+	i = -1;
+	while (++i < chunks)
 	{
-		end = (i + 1) * size / chunks;
-		while (pushed < end)
+		while (pushed < ((i + 1) * size / chunks))
 		{
 			n = *(int *)(*a)->content;
 			rank = count_smaller(*a, n) + count_smaller(*b, n);
-			if (rank < end)
+			if (rank < ((i + 1) * size / chunks))
 			{
 				pb(a, b, bm);
 				pushed++;
@@ -54,11 +51,9 @@ void	push_chunks(t_list **a, t_list **b, int size, int chunks,
 			else
 				ra(a, bm);
 		}
-		i++;
 	}
 }
 
-/* Posição do maior número da lista (0 = topo). Só lê, não mexe. */
 int	find_max_pos(t_list *cur)
 {
 	int	max;
@@ -81,8 +76,6 @@ int	find_max_pos(t_list *cur)
 	return (max_pos);
 }
 
-/* Fase 2: devolve sempre o maior de b para a,
-   girando b pelo caminho mais curto. */
 void	push_back_max(t_list **a, t_list **b, t_benchmark *bm)
 {
 	int	pos;

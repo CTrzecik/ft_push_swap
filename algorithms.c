@@ -6,7 +6,7 @@
 /*   By: ctrzecik <ctrzecik@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 14:31:36 by ctrzecik          #+#    #+#             */
-/*   Updated: 2026/11/25 14:16:03 by dibranco         ###   ########.fr       */
+/*   Updated: 2026/11/27 18:09:17 by dibranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,9 @@ void	simple_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 
 void	medium_algorithm(t_list **a, t_list **b, t_benchmark *bm)
 {
-	int	size;
-
 	if (!a || !*a || bm->disorder == 0)
 		return ;
-	size = ft_lstsize(*a);
-	if (size < 2)
-		return ;
-	push_chunks(a, b, size, ft_sqrt_int(size), bm);
+	push_chunks(a, b, ft_lstsize(*a), bm);
 	push_back_max(a, b, bm);
 }
 

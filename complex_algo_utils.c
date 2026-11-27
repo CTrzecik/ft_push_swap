@@ -11,10 +11,13 @@ void	swap(int *a, int *b)
 
 void	sort_arr(int *arr, int low, int high)
 {
-	int pivot = arr[high];
-	int	start = low;
-	int	end = high;
+	int	pivot;
+	int	start;
+	int	end;
 
+	pivot = arr[high];
+	start = low;
+	end = high;
 	if (low >= high)
 		return ;
 	while (start < end)
